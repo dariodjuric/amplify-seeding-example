@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +14,9 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AmplifyUIAngularModule
+    AmplifyUIAngularModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
