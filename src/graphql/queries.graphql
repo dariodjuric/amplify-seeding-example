@@ -1,0 +1,62 @@
+# this is an auto generated file. This will be overwritten
+query SyncRestaurants(
+  $filter: ModelRestaurantFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncRestaurants(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      name
+      description
+      city
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetRestaurant($id: ID!) {
+  getRestaurant(id: $id) {
+    id
+    name
+    description
+    city
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListRestaurants(
+  $filter: ModelRestaurantFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listRestaurants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+      city
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
