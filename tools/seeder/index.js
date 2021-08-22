@@ -7,7 +7,11 @@ const { join, parse } = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 const environmentName = localEnvInfo.envName;
-const profileName = localAwsInfo[environmentName].profileName;
+const profileName = localAwsInfo[environmentName]?.profileName;
+
+if (!profileName) {
+  throw Error('Please reinitialize your Amplify project using your AWS profile');
+}
 
 for (const [apiName] of Object.entries(amplifyMeta.api)) {
   const providerName = amplifyMeta.api[apiName].providerPlugin;
